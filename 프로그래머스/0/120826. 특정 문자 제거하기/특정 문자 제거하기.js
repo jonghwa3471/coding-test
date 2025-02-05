@@ -1,0 +1,1 @@
+const solution = (my_string, letter) => Array.from(my_string).filter((string)=> string !== letter).join("");
