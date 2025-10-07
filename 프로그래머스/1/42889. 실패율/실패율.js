@@ -1,13 +1,12 @@
 function solution(N, stages) {
     let total = stages.length;
-    const fail = {};
-    let challengers = new Array(N + 2).fill(0);
-    for(const stage of stages) {
-        challengers[stage] += 1; 
+    let fail = {};
+    const challengers = new Array(N + 2).fill(0);
+    for (const stage of stages) {
+        challengers[stage] += 1;
     }
-    console.log(challengers);
-    for(let i = 1; i <= N; i++) {
-        if(challengers[i] === 0) {
+    for (let i = 1; i <= N; i++) {
+        if (challengers[i] === 0) {
             fail[i] = 0;
             continue;
         }
