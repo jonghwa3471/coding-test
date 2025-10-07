@@ -4,18 +4,18 @@ function solution(arr1, arr2) {
     const r2 = arr2.length;
     const c2 = arr2[0].length;
     
-    let result = [];
+    let answer = [];
     
-    for(let i = 0; i < r1; i++) {
-        result.push(new Array(c2).fill(0));
+    for (let i = 0; i < r1; i++) {
+        answer.push(new Array(c2).fill(0));
     }
     
-    for(let i = 0; i < r1; i++) {
-        for(let j = 0; j < c2; j++) {
-            for(let k = 0; k < c1; k++) {
-                result[i][j] += arr1[i][k] * arr2[k][j];
+    for (let i = 0; i < r1; i++) {
+        for (let j = 0; j < c2; j++) {
+            for (let k = 0; k < c1; k++) {
+                answer[i][j] += arr1[i][k] * arr2[k][j];
             }
         }
     }
-    return result;
+    return answer;
 }
