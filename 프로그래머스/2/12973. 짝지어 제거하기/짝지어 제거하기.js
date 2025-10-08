@@ -1,13 +1,8 @@
 function solution(s) {
     const stack = [];
     for (const c of s) {
-        if (stack.length > 0) {
-            const top = stack[stack.length - 1];
-            if (top === c) {
-                stack.pop();
-            } else {
-                stack.push(c);
-            }
+        if (stack.length > 0 && stack[stack.length - 1] === c) {
+            stack.pop();
         } else {
             stack.push(c);
         }
