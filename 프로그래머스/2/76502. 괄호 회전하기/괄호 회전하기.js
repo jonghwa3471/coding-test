@@ -4,7 +4,7 @@ function solution(s) {
         const stack = [];
         let isCorrect = true;
         for (let j = 0; j < s.length; j++) {
-            const c = s[(i + j) % s.length];
+            const c = s[(i + j) % s.length]; 
             if (c === "[" || c === "{" || c === "(") {
                 stack.push(c);
             } else {
@@ -12,7 +12,7 @@ function solution(s) {
                     isCorrect = false;
                     break;
                 }
-                const top = stack[stack.length - 1]
+                const top = stack[stack.length - 1];
                 if (c === "]" && top === "[") {
                     stack.pop();
                 } else if (c === "}" && top === "{") {
@@ -25,7 +25,7 @@ function solution(s) {
                 }
             }
         }
-        if (isCorrect && stack.length === 0) {
+        if (stack.length === 0 && isCorrect) {
             answer += 1;
         }
     }
