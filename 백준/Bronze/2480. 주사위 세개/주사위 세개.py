@@ -1,15 +1,13 @@
-numbers = list(map(int, input().split()))
+arr = [0] * 7
 
-count = [0] * 7
+nums = list(map(int, input().split()))
 
-for n in numbers:
-    count[n] += 1
-
-if 3 in count:
-    num = count.index(3)
-    print(10000 + num * 1000)
-elif 2 in count:
-    num = count.index(2)
-    print(1000 + num * 100)
+for n in nums:
+    arr[n] += 1
+    
+if 3 in arr:
+    print(arr.index(3) * 1000 + 10000)
+elif 2 in arr:
+    print(arr.index(2) * 100 + 1000)
 else:
-    print(max(numbers) * 100)
+    print(max(nums) * 100)
