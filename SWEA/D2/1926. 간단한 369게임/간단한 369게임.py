@@ -12,5 +12,5 @@ for i in range(1, T + 1):
     if store:
         result.append(store)
     else:
-        result.append(str(i))
+        result.append(i)
 print(*result)
