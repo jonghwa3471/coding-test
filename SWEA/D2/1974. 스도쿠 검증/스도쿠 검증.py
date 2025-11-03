@@ -1,32 +1,30 @@
 T = int(input())
 
 for t in range(T):
-    ok = 1
     arr = [list(map(int, input().split())) for _ in range(9)]
+    result = 1
     
     for i in range(9):
-        if not len(set(arr[i])) == 9:
-            ok = 0
+        if len(set(arr[i])) != 9:
+            result = 0
             break
-            
-    if ok:
+    if result:
         for i in range(9):
-            nums = []
+            cols = []
             for j in range(9):
-                nums.append(arr[j][i])
-            if not len(set(nums)) == 9:
-                    ok = 0
-                    break
-                    
-    if ok:
+                cols.append(arr[j][i])
+            if len(set(cols)) != 9:
+                result = 0
+                break
+                
+    if result:
         for i in range(0, 9, 3):
             for j in range(0, 9, 3):
-                nums = []
+                grid = []
                 for k in range(i, i + 3):
-                    nums.extend(arr[k][j : j + 3])
-                if not len(set(nums)) == 9:
-                                ok = 0
-                                break
-            if not ok:
-                break
-    print(f"#{t + 1} {ok}")
+                    grid.extend(arr[k][j : j + 3])
+                if len(set(grid)) != 9:
+                    result = 0
+                    break
+                    
+    print(f"#{t + 1} {result}")
