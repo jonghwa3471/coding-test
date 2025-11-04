@@ -9,5 +9,5 @@ for t in range(T):
             arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j]
     print(f"#{t + 1}")
     for row in arr:
-        row = [item for item in row if item != 0]
-        print(*row)
+        result = [item for item in row if item != 0]
+        print(*result)
