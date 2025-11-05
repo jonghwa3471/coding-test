@@ -14,7 +14,7 @@ for t in range(T):
     for i in range(K + 1):
         sum_ = 0
         for j in range(len(A)):
-            sum_ += A[j] *B[i + j]
+            sum_ += A[j] * B[i + j]
         if sum_ >= result:
             result = sum_
     print(f"#{t + 1} {result}")
