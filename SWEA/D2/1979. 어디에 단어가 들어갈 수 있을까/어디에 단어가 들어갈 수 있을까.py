@@ -1,4 +1,4 @@
-T = int(input())
+T= int(input())
 
 for t in range(T):
     N, K = map(int, input().split())
@@ -15,7 +15,6 @@ for t in range(T):
                 sum_ = 0
         if sum_ == K:
             count += 1
-                
     for i in range(N):
         sum_ = 0
         for j in range(N):
