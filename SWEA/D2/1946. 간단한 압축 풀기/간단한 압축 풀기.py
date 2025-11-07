@@ -2,15 +2,12 @@ T = int(input())
 
 for t in range(T):
     N = int(input())
-    arr = ""
+    arr = []
     for i in range(N):
         ch, n = input().split()
-        arr += ch * int(n)
+        arr.append(ch * int(n))
+    s = "".join(arr)
     print(f"#{t + 1}")
-    for i in range(0, len(arr), 10):
-        if len(arr[i : i + 10]) != 10:
-            line = "".join(arr[i : len(arr)])
-            print(line)
-        else:
-            line = "".join(arr[i : i + 10])
-            print(line)
+    for i in range(0, len(s), 10):
+        result = s[i : i + 10]
+        print(result)
