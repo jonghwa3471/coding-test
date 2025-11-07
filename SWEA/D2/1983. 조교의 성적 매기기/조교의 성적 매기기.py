@@ -8,7 +8,7 @@ for t in range(T):
         mid, fin, hm = map(int, input().split())
         total = mid * 0.35 + fin * 0.45 + hm * 0.2
         scores.append((i, total))
-    scores.sort(lambda x: x[1], reverse = True)
+    scores.sort(key = lambda x: x[1], reverse = True)
     rank_of = {sid: rank for rank, (sid, _) in enumerate(scores)}
     group = N // 10
     r = rank_of[K]
