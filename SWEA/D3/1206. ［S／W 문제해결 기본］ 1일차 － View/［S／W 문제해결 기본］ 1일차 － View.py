@@ -1,9 +1,9 @@
 for t in range(10):
     N = int(input())
-    arr = list(map(int, input().split()))
-    answer = 0
+    height = list(map(int, input().split()))
+    count = 0
     for i in range(2, N - 2):
-        max_height = max(arr[i - 2], arr[i - 1], arr[i + 1], arr[i + 2])
-        if max_height < arr[i]:
-            answer += arr[i] - max_height
-    print(f"#{t + 1} {answer}")
+        highest = max(height[i -2], height[i - 1], height[i + 1], height[i + 2])
+        if height[i] > highest:
+            count += height[i] - highest
+    print(f"#{t + 1} {count}")
