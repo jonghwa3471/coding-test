@@ -5,7 +5,7 @@ for t in range(T):
     arr = []
     result = 0
     for n in range(N):
-        row = list(map(int, list(input())))
+        row = list(map(int, input()))
         arr.append(row)
     for i in range(N):
         mid = N // 2
