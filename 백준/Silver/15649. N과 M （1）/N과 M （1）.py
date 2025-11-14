@@ -1,4 +1,4 @@
-N, M = list(map(int, input().split()))
+N, M = map(int, input().split())
 
 arr = [False] * (N + 1)
 result = []
@@ -6,7 +6,6 @@ result = []
 def dfs():
     if len(result) == M:
         print(*result)
-        return
     for i in range(1, N + 1):
         if not arr[i]:
             arr[i] = True
@@ -14,5 +13,4 @@ def dfs():
             dfs()
             result.pop()
             arr[i] = False
-        
 dfs()
