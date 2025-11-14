@@ -1,16 +1,15 @@
-T = int(input())
-
-rule = ["3", "6", "9"]
+N = int(input())
+rule = ("3", "6", "9")
 result = []
 
-for i in range(1, T + 1):
-    arr = list(str(i))
-    store = ""
-    for num in arr:
-        if num in rule:
-            store += "-"
-    if store:
-        result.append(store)
+for i in range(1, N + 1):
+    num = list(str(i))
+    s = ""
+    for n in num:
+        if n in rule:
+            s += "-"
+    if s:
+        result.append(s)
     else:
         result.append(i)
 print(*result)
