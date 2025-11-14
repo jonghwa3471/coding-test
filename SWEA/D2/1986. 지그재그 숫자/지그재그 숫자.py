@@ -1,11 +1,11 @@
 T = int(input())
+
 for t in range(T):
     N = int(input())
-    arr = [*range(1, N + 1)]
     result = 0
-    for n in arr:
-        if n % 2 == 0:
-            result -= n
+    for i in range(1, N + 1):
+        if i % 2 == 0:
+            result -= i
         else:
-            result += n
+            result += i
     print(f"#{t + 1} {result}")
