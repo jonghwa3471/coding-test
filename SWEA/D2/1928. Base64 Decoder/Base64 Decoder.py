@@ -1,12 +1,15 @@
 T = int(input())
 
 for t in range(T):
-    S = input()
     table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    S = input()
     binary = ""
     result = ""
     for s in S:
-        binary += format(table.index(s), "06b")
+        index = table.index(s)
+        binary += format(index, "06b")
     for i in range(0, len(binary), 8):
-        result += chr(int(binary[i : i + 8], 2))
+        byte = binary[i : i + 8]
+        ch = chr(int(byte, 2))
+        result += ch
     print(f"#{t + 1} {result}")
