@@ -9,5 +9,5 @@ for t in range(T):
     s = "".join(arr)
     print(f"#{t + 1}")
     for i in range(0, len(s), 10):
-        result = s[i : i + 10]
-        print(result)
+        line = s[i : i + 10]
+        print(line)
