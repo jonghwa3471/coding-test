@@ -2,14 +2,11 @@ T = int(input())
 
 for t in range(T):
     N = int(input())
-    arr = []
+    arr = [list(map(int, str(input()))) for _ in range(N)]
+    mid = N // 2
     result = 0
-    for n in range(N):
-        row = list(map(int, input()))
-        arr.append(row)
     for i in range(N):
-        mid = N // 2
         start = abs(mid - i)
-        piece = arr[i][start : N - start]
-        result += sum(piece)
+        end = N - start
+        result += sum(arr[i][start : end])
     print(f"#{t + 1} {result}")
