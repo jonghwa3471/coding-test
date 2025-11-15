@@ -1,8 +1,6 @@
 T = int(input())
 
 for t in range(T):
-    A, B = map(int, input().split())
-    if A + B >= 24:
-        print(f"#{t + 1} {(A + B) - 24}")
-    else:
-        print(f"#{t + 1} {A + B}")
+    h1, h2 = map(int, input().split())
+    result = (h1 + h2) % 24
+    print(f"#{t + 1} {result}")
