@@ -1,14 +1,14 @@
 for t in range(10):
     N = int(input())
-    height = list(map(int, input().split()))
+    arr = list(map(int, input().split()))
     for i in range(N):
-        max_height = max(height)
-        min_height = min(height)
-        max_index = height.index(max_height)
-        min_index = height.index(min_height)
-        height[max_index] -= 1
-        height[min_index] += 1
-    max_ = max(height)
-    min_ = min(height)
-    result = max_ - min_
+        max_ = max(arr)
+        min_ = min(arr)
+        max_index = arr.index(max_)
+        min_index = arr.index(min_)
+        arr[max_index] -= 1
+        arr[min_index] += 1
+    fin_max = max(arr)
+    fin_min = min(arr)
+    result = fin_max - fin_min
     print(f"#{t + 1} {result}")
