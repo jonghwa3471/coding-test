@@ -23,5 +23,5 @@ for t in range(10):
             s = list(map(int, cmd[i + 2 : i + 2 + y]))
             raw.extend(s)
             i += 2 + y
-    result = raw[0 : 10]
+    result = raw[: 10]
     print(f"#{t + 1}", *result)
