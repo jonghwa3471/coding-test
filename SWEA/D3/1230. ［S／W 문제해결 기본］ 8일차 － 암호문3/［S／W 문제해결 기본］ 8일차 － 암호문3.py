@@ -10,8 +10,8 @@ for t in range(10):
             x = int(cmd[i + 1])
             y = int(cmd[i + 2])
             s = list(map(int, cmd[i + 3 : i + 3 + y]))
-            for index, num in enumerate(s):
-                raw.insert(x + index, num)
+            for index, value in enumerate(s):
+                raw.insert(x + index, value)
             i += 3 + y
         elif cmd_type == "D":
             x = int(cmd[i + 1])
@@ -21,8 +21,7 @@ for t in range(10):
         elif cmd_type == "A":
             y = int(cmd[i + 1])
             s = list(map(int, cmd[i + 2 : i + 2 + y]))
-            for num in s:
-                raw.append(num)
+            raw.extend(s)
             i += 2 + y
-    result = raw[0: 10]
+    result = raw[0 : 10]
     print(f"#{t + 1}", *result)
