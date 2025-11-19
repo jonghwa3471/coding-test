@@ -1,20 +1,11 @@
 T = int(input())
 
 for t in range(T):
-    arr = list(map(int, input().split()))
-    result = 0
-    if arr[2] <= arr[1]:
-        while arr[2] <= arr[1]:
-            arr[1] -= 1
-            if arr[1] == 0:
-                result = -1
-                break
-            result += 1
-    if arr[1] <= arr[0]:
-        while arr[1] <= arr[0]:
-            arr[0] -= 1
-            if arr[0] == 0:
-                result = -1
-                break
-            result += 1
+    a, b, c = map(int, input().split())
+    b_new = min(b, c - 1)
+    if b_new < 2:
+        print(f"#{t + 1} -1")
+        continue
+    a_new = min(a, b_new - 1)
+    result = (a - a_new) + (b - b_new)
     print(f"#{t + 1} {result}")
