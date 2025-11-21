@@ -23,4 +23,5 @@ for t in range(T):
                 if next_cost < dist[nr][nc]:
                     dist[nr][nc] = next_cost
                     heapq.heappush(pq, (next_cost, nr, nc))
-    print(f"#{t + 1} {dist[N - 1][N - 1]}")
+    result = dist[N - 1][N - 1]
+    print(f"#{t + 1} {result}")                          
