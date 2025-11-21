@@ -9,6 +9,6 @@ for t in range(10):
             if child_count != 0:
                 is_valid = 0
         else:
-            if child_count == 0:
+            if child_count != 2:
                 is_valid = 0
     print(f"#{t + 1} {is_valid}")
