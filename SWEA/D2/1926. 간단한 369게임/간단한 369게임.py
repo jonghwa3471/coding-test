@@ -1,15 +1,15 @@
 N = int(input())
-rule = ("3", "6", "9")
-result = []
 
-for i in range(1, N + 1):
-    num = list(str(i))
-    s = ""
+arr = [str(i) for i in range(1, N + 1)]
+rule = ["3", "6", "9"]
+result = []
+for num in arr:
+    text = ""
     for n in num:
         if n in rule:
-            s += "-"
-    if s:
-        result.append(s)
+            text += "-"
+    if text == "":
+        result.append(num)
     else:
-        result.append(i)
+        result.append(text)
 print(*result)
