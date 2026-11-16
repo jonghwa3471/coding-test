@@ -1,7 +1,5 @@
 T = int(input())
 
 for t in range(T):
-    nums = list(map(int, input().split()))
-    avg = sum(nums) / len(nums)
-    avg = round(avg)
+    avg = round(sum(map(int, input().split())) / 10)
     print(f"#{t + 1} {avg}")
