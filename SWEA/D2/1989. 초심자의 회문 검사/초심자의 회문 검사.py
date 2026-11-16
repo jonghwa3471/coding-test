@@ -1,8 +1,8 @@
 T = int(input())
 
 for t in range(T):
-    s = input()
-    if s == s[::-1]:
-        print(f"#{t + 1} 1")
-    else:
-        print(f"#{t + 1} 0")
+    word = input()
+    result = 0
+    if word == word[::-1]:
+        result = 1
+    print(f"#{t + 1} {result}")
