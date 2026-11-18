@@ -2,38 +2,32 @@ T = int(input())
 
 for t in range(T):
     arr = [list(map(int, input().split())) for _ in range(9)]
-    row = True
-    col = True
-    grid = True
-    result = 0
+    result = 1
     for i in range(9):
-        check_exists = []
-        for j in range(9):
-            if not arr[i][j] in check_exists:
-                check_exists.append(arr[i][j])
-        if not len(check_exists) == 9:
-            row = False
-            
-    for i in range(9):
-        check_exists = []
-        for j in range(9):
-            if not arr[j][i] in check_exists:
-                check_exists.append(arr[j][i])
-        if not len(check_exists) == 9:
-            col = False
-            
-    for i in range(0, 9, 3):
-        for j in range(0, 9, 3):
-            check_exists = []
-            for k in range(i, i + 3):
-                grid_row = arr[k][j:j+3]
-                for num in grid_row:
-                    if not num in check_exists:
-                        check_exists.append(num)
-            if not len(check_exists) == 9:
-                grid = False
-    if row and col and grid:
-        result = 1
-    else:
-        result = 0
+        row = set()
+        row.update(arr[i])
+        if len(row) != 9:
+            result = 0
+            break
+    
+    if result:
+        for i in range(9):
+            col = set()
+            for j in range(9):
+                col.add(arr[j][i])
+            if len(col) != 9:
+                result = 0
+                break
+   
+    if result:
+        for i in range(0, 9, 3):
+            for j in range(0, 9, 3):
+                grid = set()
+                for k in range(i, i + 3):
+                    grid.update(arr[k][j : j + 3])
+                if len(grid) != 9:
+                    result = 0
+                    break
+            if not result:
+                break
     print(f"#{t + 1} {result}")
