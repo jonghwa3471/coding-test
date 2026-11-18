@@ -7,8 +7,9 @@ for t in range(T):
     for i in range(1, N + 1):
         scores = list(map(int, input().split()))
         total = scores[0] * 0.35 + scores[1] * 0.45 + scores[2] * 0.2
-        ordered_scores.append((i, total))
-    ordered_scores.sort(key=lambda x: x[1], reverse=True)
-    rank_of = {index: rank for rank, (index, _) in enumerate(ordered_scores)}
-    result = grade[rank_of[K] // (N // 10)]
+        ordered_scores.append(total)
+    target = ordered_scores[K - 1]
+    ordered_scores.sort(reverse=True)
+    rank = ordered_scores.index(target)
+    result = grade[rank // (N //10)]
     print(f"#{t + 1} {result}")
