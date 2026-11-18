@@ -11,7 +11,7 @@ for t in range(T):
     for i in range(M - N + 1):
         sum_ = 0
         for j in range(N):
-            sum_ += A[j] * B[j + i]
+            sum_ += A[j] * B[i + j]
         if sum_ > result:
             result = sum_
     print(f"#{t + 1} {result}")
