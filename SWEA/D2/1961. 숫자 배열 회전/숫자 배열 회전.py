@@ -12,7 +12,7 @@ for t in range(T):
             deg90[i][j] = arr[N - 1 - j][i]
             deg180[i][j] = arr[N - 1 - i][N - 1 - j]
             deg270[i][j] = arr[j][N - 1 - i]
-
+    
     print(f"#{t + 1}")
     for i in range(N):
         row90 = "".join(deg90[i])
