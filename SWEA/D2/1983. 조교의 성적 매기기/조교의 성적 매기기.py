@@ -1,17 +1,14 @@
 T = int(input())
 
 for t in range(T):
-    grade = ["A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0"]
     N, K = map(int, input().split())
-    arr = [list(map(int, input().split())) for _ in range(N)]
-    score = []
-    for i in range(N):
-        mid, fin, hm = arr[i]
-        total = mid * 0.35 + fin * 0.45 + hm * 0.2
-        score.append((i + 1, total))
-    score.sort(lambda x: x[1], reverse = True)
-    rank_of = {num: rank for rank, (num, _) in enumerate(score)}
-    group = N // 10
-    r = rank_of[K]
-    result = grade[r // group]
+    grade = ["A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0"]
+    ordered_scores = []
+    for i in range(1, N + 1):
+        scores = list(map(int, input().split()))
+        total = scores[0] * 0.35 + scores[1] * 0.45 + scores[2] * 0.2
+        ordered_scores.append((i, total))
+    ordered_scores.sort(key=lambda x: x[1], reverse=True)
+    rank_of = {index: rank for rank, (index, _) in enumerate(ordered_scores)}
+    result = grade[rank_of[K] // (N // 10)]
     print(f"#{t + 1} {result}")
