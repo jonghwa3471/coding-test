@@ -1,21 +1,28 @@
 for t in range(10):
-    T = int(input())
+    N = int(input())
     arr = [list(map(int, input().split())) for _ in range(100)]
-    result = [0, 0, 0]
+    row_max = 0
+    col_max = 0
+    cross_max = 0
+    for row in arr:
+        if sum(row) > row_max:
+            row_max = sum(row)
+    
     for i in range(100):
-        if sum(arr[i]) > result[0]:
-            result[0] = sum(arr[i])
-    for i in range(100):
-        col_sum = 0
+        cols = 0
         for j in range(100):
-            col_sum += arr[j][i]
-        if col_sum > result[1]:
-            result[1] = col_sum
-    diagonal_sum = 0
+            cols += arr[j][i]
+        if cols > col_max:
+            col_max = cols
+            
+    cross1 = 0        
     for i in range(100):
-        diagonal_sum += arr[i][i]
-        if result[2] < diagonal_sum:
-            result[2] = diagonal_sum
-    result.sort(reverse = True)
-    print(f"#{t + 1}", result[0])
+        cross1 += arr[i][i]
         
+    cross2 = 0
+    for i in range(100):
+        cross2 += arr[99 - i][99 - i]
+        
+    cross_max = max(cross1, cross2)
+    result = max(row_max, col_max, cross_max)
+    print(f"#{N} {result}")
