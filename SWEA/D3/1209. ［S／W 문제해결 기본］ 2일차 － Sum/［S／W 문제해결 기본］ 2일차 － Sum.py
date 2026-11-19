@@ -21,7 +21,7 @@ for t in range(10):
         
     cross2 = 0
     for i in range(100):
-        cross2 += arr[99 - i][99 - i]
+        cross2 += arr[i][99 - i]
         
     cross_max = max(cross1, cross2)
     result = max(row_max, col_max, cross_max)
