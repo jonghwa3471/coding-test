@@ -7,11 +7,13 @@ for t in range(10):
             word = arr[i][j : j + N]
             if word == word[::-1]:
                 result += 1
+                
     for i in range(8):
         for j in range(8 - N + 1):
             word = ""
-            for k in range(N):
-                word += arr[j + k][i]
+            for k in range(j, j + N):
+                word += arr[k][i]
             if word == word[::-1]:
                 result += 1
+            
     print(f"#{t + 1} {result}")
