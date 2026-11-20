@@ -1,11 +1,11 @@
 T = int(input())
 
 for t in range(T):
-    s = input()
-    prev = "0"
+    memory = input()
     result = 0
-    for ch in s:
-        if ch != prev:
+    prev = "0"
+    for m in memory:
+        if m != prev:
             result += 1
-            prev = ch
+        prev = m
     print(f"#{t + 1} {result}")
